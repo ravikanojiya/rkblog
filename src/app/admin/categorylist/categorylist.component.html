@@ -1,0 +1,28 @@
+<div class="dash-header">
+    <div class="dash-title">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="dash-nav">
+        <a [routerLink]="['/admin/categories/create']" class="btn btn-success">Add Category</a>
+    </div>
+</div>
+<hr>
+<table *ngIf="catlist" datatable class="row-border hover">
+<thead>
+    <tr>
+        <th>#ID</th>
+        <th>CategoryName</th>
+        <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>  
+    <tr *ngFor="let cat of catlist">
+        <td>{{cat.cid}}</td>
+        <td>{{cat.category_name}}</td>
+        <td class="action">
+            <a [routerLink]="['/admin/blogs/edit']" class="btn btn-info btn-sm">Edit</a>
+            <input type="button" (click)="ondelete()" class="btn btn-danger btn-sm"  value="Delete">
+        </td>
+    </tr>
+</tbody>
+</table>

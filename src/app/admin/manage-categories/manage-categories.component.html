@@ -1,0 +1,31 @@
+
+<div class="dash-header">
+    <div class="dash-title">
+        <h1>{{pageTitle}}</h1>
+    </div>
+   
+</div>
+<div class="blog-form">
+    <form [formGroup]="catForm"  (ngSubmit)="onSubmit()" >
+        <div class="form-group form-row">
+            <label class="col-md-3">CategoryName <span class="required">*</span></label>
+            <div class="col-md-9">
+                <input type="text" formControlName="category_name" class="form-control" placeholder="Category" required>
+                <!-- <div *ngIf="title.invalid && (title.dirty || title.touched)" class="error">
+                    <div *ngIf="title.errors">
+                        Title is required.
+                    </div>
+                </div> -->
+            </div>
+        </div>
+       
+     
+        <div class="form-group form-row">
+            <label class="col-md-3"></label>
+            <div class="col-md-9">
+               
+                <button type="submit" [disabled]="!catForm.valid" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
